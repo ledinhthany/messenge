@@ -5,11 +5,10 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
     cors: {
-        origin: "https://2508roblox.github.io"
-   
-
+        origin: "https://ledinhthany.github.io"
     }
 });
+
 
 app.use(express.static(__dirname + '/public'));
 
