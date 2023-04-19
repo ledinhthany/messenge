@@ -7,9 +7,13 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
-    origin: ["https://ledinhthany.github.io/messenge/"]
+    origin: ["https://ledinhthany.github.io/messenge/"],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
   }
 });
+
 
 
 
