@@ -52,7 +52,10 @@
 <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emoji-mart/react@3.0.0/dist/umd/emoji-mart.min.js"></script>
 <script>
-const socket = io();
+const socket = io('https://ledinhthany.github.io/messenge/');
+  socket.on('connect', () => {
+    console.log('Connected to server');
+  });
 const chatForm = document.querySelector('#chat-form');
 const chatMes = document.querySelector('#chat-mes');
 const messages = document.querySelector('#messages');
