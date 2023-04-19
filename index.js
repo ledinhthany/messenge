@@ -7,7 +7,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
-    origin: ["https://ledinhthany.github.io", "https://example.com"]
+    origin: ["https://ledinhthany.github.io"]
   }
 });
 
