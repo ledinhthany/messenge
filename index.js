@@ -1,14 +1,22 @@
 const express = require('express');
 const app = express();
+
+
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
-    cors: {
-        origin: "https://ledinhthany.github.io"
-    }
+  cors: {
+    origin: ["https://ledinhthany.github.io", "https://example.com"]
+  }
 });
 
+
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+app.use(express.static('public'));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -29,3 +37,5 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+

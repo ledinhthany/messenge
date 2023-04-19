@@ -2,7 +2,16 @@ const socket = io();
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
     const messages = document.querySelector('#messages');
+    const roomLink = document.querySelector('#room-link');
 
+
+
+    roomLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      history.pushState({}, null, '/room');
+      // Load trang mới bằng AJAX hoặc fetch()
+    });
+    
     // Kiểm tra xem tên người dùng đã được lưu trong localStorage hay chưa
     let username = localStorage.getItem('username');
     if (!username) {
